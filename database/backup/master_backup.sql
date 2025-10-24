@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict i8pfjVa1GrWXdgELjXcEHkU76kvzCLL7occwI4MvoVUsFzwr8If5QKThigfuFBa
+\restrict FerecSO1JRk95php6bR3vYln5utXLTk0kkQxmeaXCHZtysF7QKkXEjHAynpHDdo
 
 -- Dumped from database version 13.22 (Debian 13.22-1.pgdg13+1)
 -- Dumped by pg_dump version 13.22 (Debian 13.22-1.pgdg13+1)
@@ -415,9 +415,9 @@ ALTER TABLE ONLY public.pacientes ALTER COLUMN id_paciente SET DEFAULT nextval('
 --
 
 COPY public.centros_medicos (id_cen_med, nombre, ciudad, direccion, telefono, email, created_at, updated_at) FROM stdin;
-1	Hospital Metropolitano Quito	Quito	Av. Mariana de Jesús Oe3-17	02-3998000	info@metropolitano.ec	2025-10-24 06:30:56.480544	2025-10-24 06:30:56.480544
-2	Hospital Luis Vernaza Guayaquil	Guayaquil	Av. Pedro Menéndez Gilbert	04-3735000	contacto@vernaza.ec	2025-10-24 06:30:56.480544	2025-10-24 06:30:56.480544
-3	Hospital Monte Sinaí Cuenca	Cuenca	Av. Solano 1-61	07-3707100	administracion@montesinai.ec	2025-10-24 06:30:56.480544	2025-10-24 06:30:56.480544
+1	Hospital Metropolitano Quito	Quito	Av. Mariana de Jesús Oe3-17	02-3998000	info@metropolitano.ec	2025-10-24 19:16:58.010961	2025-10-24 19:16:58.010961
+2	Hospital Luis Vernaza Guayaquil	Guayaquil	Av. Pedro Menéndez Gilbert	04-3735000	contacto@vernaza.ec	2025-10-24 19:16:58.010961	2025-10-24 19:16:58.010961
+3	Hospital Monte Sinaí Cuenca	Cuenca	Av. Solano 1-61	07-3707100	administracion@montesinai.ec	2025-10-24 19:16:58.010961	2025-10-24 19:16:58.010961
 \.
 
 
@@ -450,11 +450,11 @@ COPY public.empleados (id_empleado, id_cen_med, cedula, nombre, apellido, cargo,
 --
 
 COPY public.especialidades (id_especialidad, nombre, descripcion, created_at) FROM stdin;
-1	Cardiología	Especialidad en enfermedades del corazón y sistema cardiovascular	2025-10-24 06:30:56.479191
-2	Pediatría	Especialidad en salud infantil y adolescente	2025-10-24 06:30:56.479191
-3	Traumatología	Especialidad en lesiones del sistema musculoesquelético	2025-10-24 06:30:56.479191
-4	Dermatología	Especialidad en enfermedades de la piel	2025-10-24 06:30:56.479191
-5	Ginecología	Especialidad en salud femenina y sistema reproductivo	2025-10-24 06:30:56.479191
+1	Cardiología	Especialidad en enfermedades del corazón y sistema cardiovascular	2025-10-24 19:16:58.008097
+2	Pediatría	Especialidad en salud infantil y adolescente	2025-10-24 19:16:58.008097
+3	Traumatología	Especialidad en lesiones del sistema musculoesquelético	2025-10-24 19:16:58.008097
+4	Dermatología	Especialidad en enfermedades de la piel	2025-10-24 19:16:58.008097
+5	Ginecología	Especialidad en salud femenina y sistema reproductivo	2025-10-24 19:16:58.008097
 \.
 
 
@@ -471,11 +471,11 @@ COPY public.medicamentos_recetados (id_med_receta, id_consulta, nombre_med, pres
 --
 
 COPY public.medicos (id_medico, id_especialidad, cedula, nombre, apellido, fecha_nacimiento, telefono, email, created_at, updated_at) FROM stdin;
-1	1	0101010101	Carlos	Mendoza	1975-03-15	0991234567	carlos.mendoza@hospital.com	2025-10-24 06:30:56.481861	2025-10-24 06:30:56.481861
-2	2	0202020202	Ana	García	1980-07-22	0992345678	ana.garcia@hospital.com	2025-10-24 06:30:56.481861	2025-10-24 06:30:56.481861
-3	3	0303030303	Luis	Rodríguez	1978-11-30	0993456789	luis.rodriguez@hospital.com	2025-10-24 06:30:56.481861	2025-10-24 06:30:56.481861
-4	4	0404040404	María	Fernández	1982-05-10	0994567890	maria.fernandez@hospital.com	2025-10-24 06:30:56.481861	2025-10-24 06:30:56.481861
-5	5	0505050505	Roberto	Silva	1976-09-18	0995678901	roberto.silva@hospital.com	2025-10-24 06:30:56.481861	2025-10-24 06:30:56.481861
+1	1	0101010101	Carlos	Mendoza	1975-03-15	0991234567	carlos.mendoza@hospital.com	2025-10-24 19:16:58.013819	2025-10-24 19:16:58.013819
+2	2	0202020202	Ana	García	1980-07-22	0992345678	ana.garcia@hospital.com	2025-10-24 19:16:58.013819	2025-10-24 19:16:58.013819
+3	3	0303030303	Luis	Rodríguez	1978-11-30	0993456789	luis.rodriguez@hospital.com	2025-10-24 19:16:58.013819	2025-10-24 19:16:58.013819
+4	4	0404040404	María	Fernández	1982-05-10	0994567890	maria.fernandez@hospital.com	2025-10-24 19:16:58.013819	2025-10-24 19:16:58.013819
+5	5	0505050505	Roberto	Silva	1976-09-18	0995678901	roberto.silva@hospital.com	2025-10-24 19:16:58.013819	2025-10-24 19:16:58.013819
 \.
 
 
@@ -484,11 +484,11 @@ COPY public.medicos (id_medico, id_especialidad, cedula, nombre, apellido, fecha
 --
 
 COPY public.pacientes (id_paciente, cedula, nombre, apellido, fecha_nacimiento, genero, tipo_sangre, telefono, email, direccion, created_at, updated_at) FROM stdin;
-1	0606060606	Juan	Pérez	1985-04-12	Masculino	O+	0987654321	juan.perez@email.com	Av. Amazonas N45-20	2025-10-24 06:30:56.483706	2025-10-24 06:30:56.483706
-2	0707070707	María	González	1990-08-25	Femenino	A+	0987654322	maria.gonzalez@email.com	Calle Guayas y Quil	2025-10-24 06:30:56.483706	2025-10-24 06:30:56.483706
-3	0808080808	Pedro	Martínez	1978-12-03	Masculino	B+	0987654323	pedro.martinez@email.com	Av. Shyris 123	2025-10-24 06:30:56.483706	2025-10-24 06:30:56.483706
-4	0909090909	Laura	Herrera	1995-02-18	Femenino	AB+	0987654324	laura.herrera@email.com	Calle Roca 456	2025-10-24 06:30:56.483706	2025-10-24 06:30:56.483706
-5	1010101010	Carlos	Ramírez	1982-07-30	Masculino	O-	0987654325	carlos.ramirez@email.com	Av. 6 de Diciembre	2025-10-24 06:30:56.483706	2025-10-24 06:30:56.483706
+1	0606060606	Juan	Pérez	1985-04-12	Masculino	O+	0987654321	juan.perez@email.com	Av. Amazonas N45-20	2025-10-24 19:16:58.017872	2025-10-24 19:16:58.017872
+2	0707070707	María	González	1990-08-25	Femenino	A+	0987654322	maria.gonzalez@email.com	Calle Guayas y Quil	2025-10-24 19:16:58.017872	2025-10-24 19:16:58.017872
+3	0808080808	Pedro	Martínez	1978-12-03	Masculino	B+	0987654323	pedro.martinez@email.com	Av. Shyris 123	2025-10-24 19:16:58.017872	2025-10-24 19:16:58.017872
+4	0909090909	Laura	Herrera	1995-02-18	Femenino	AB+	0987654324	laura.herrera@email.com	Calle Roca 456	2025-10-24 19:16:58.017872	2025-10-24 19:16:58.017872
+5	1010101010	Carlos	Ramírez	1982-07-30	Masculino	O-	0987654325	carlos.ramirez@email.com	Av. 6 de Diciembre	2025-10-24 19:16:58.017872	2025-10-24 19:16:58.017872
 \.
 
 
@@ -756,5 +756,5 @@ ALTER TABLE ONLY public.medicos
 -- PostgreSQL database dump complete
 --
 
-\unrestrict i8pfjVa1GrWXdgELjXcEHkU76kvzCLL7occwI4MvoVUsFzwr8If5QKThigfuFBa
+\unrestrict FerecSO1JRk95php6bR3vYln5utXLTk0kkQxmeaXCHZtysF7QKkXEjHAynpHDdo
 

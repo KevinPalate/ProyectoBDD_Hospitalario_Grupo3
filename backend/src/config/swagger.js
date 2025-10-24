@@ -35,6 +35,10 @@ const options = {
         {
             name: 'Sistema',
             description: 'Monitoreo y métricas del sistema distribuido'
+        },
+        {
+            name: 'Autenticación',
+            description: 'Endpoints de login, registro y gestión de tokens JWT'
         }
         ],
         components: {
@@ -90,6 +94,26 @@ const options = {
                 }
                 }
             }
+            },
+            User: {
+            type: 'object',
+            properties: {
+                id_empleado: { type: 'integer', example: 1 },
+                cedula: { type: 'string', example: "1712345678" },
+                nombre: { type: 'string', example: "Juan" },
+                apellido: { type: 'string', example: "Pérez" },
+                cargo: { type: 'string', example: "Médico" },
+                id_cen_med: { type: 'integer', example: 1 },
+                rol: { type: 'string', example: "hospital" },
+                created_at: { type: 'string', format: 'date-time' }
+            }
+            },
+        },
+        securitySchemes: {
+            bearerAuth: {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT'
             }
         }
         }
