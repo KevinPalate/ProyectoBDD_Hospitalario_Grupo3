@@ -1,38 +1,34 @@
-
-### **DIAGRAMA 4: Arquitectura MVC del Backend**
-
-Crea `docs/architecture/arquitectura-mvc.md`:
-
-```markdown
 # Arquitectura MVC del Backend
 
 ## Patrón Modelo-Vista-Controlador
 
+```
 ┌─────────────────────────────────────────────────────────────────┐
-│ ARQUITECTURA MVC - BACKEND │
+│ ARQUITECTURA MVC - BACKEND                                      │
 ├─────────────────────────────────────────────────────────────────┤
-│ │
-│ ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐ │
-│ │ ROUTES │ │ CONTROLLERS │ │ MODELS │ │
-│ │ │ │ │ │ │ │
-│ │ • /centros │───►│ • centros- │───►│ • CentroMedico │ │
-│ │ • /consultas│ │ Controller│ │ • ConsultaMedica│ │
-│ │ • /monitor │ │ • consultas-│ │ • Monitor │ │
-│ │ │ │ Controller│ │ │ │
-│ └─────────────┘ └─────────────┘ └─────────────────┘ │
-│ │ │ │
-│ ▼ ▼ │
-│ ┌─────────────┐ ┌─────────────────┐ │
-│ │ VISTA │ │ DATABASE │ │
-│ │ (JSON/HTTP) │ │ CONFIGURATION │ │
-│ │ │ │ │ │
-│ │ • Respuestas│ │ • 3 PostgreSQL │ │
-│ │ JSON │ │ Nodos │ │
-│ │ • Swagger │ │ • Pools │ │
-│ │ Docs │ │ • Fragmentación │ │
-│ └─────────────┘ └─────────────────┘ │
-│ │
+│                                                                 │
+│ ┌─────────────┐    ┌─────────────┐    ┌─────────────────┐       │
+│ │ ROUTES      │    │ CONTROLLERS │    │ MODELS          │       │
+│ │             │    │             │    │                 │       │
+│ │ • /centros  │───►│ • centros-  │───►│ • CentroMedico  │       │
+│ │ • /consultas│    │ Controller  │    │ • ConsultaMedica│       │
+│ │ • /monitor  │    │ • consultas-│    │ • Monitor       │       │
+│ │             │    │ Controller  │    │                 │       │
+│ └─────────────┘    └─────────────┘    └─────────────────┘       │
+│        │                                        │               │
+│        ▼                                        ▼               │
+│ ┌─────────────┐                       ┌─────────────────┐       │
+│ │ VISTA       │                       │ DATABASE        │       │
+│ │ (JSON/HTTP) │                       │ CONFIGURATION   │       │
+│ │             │                       │                 │       │
+│ │ • Respuestas│                       │ • 3 PostgreSQL  │       │
+│ │ JSON        │                       │ Nodos           │       │
+│ │ • Swagger   │                       │ • Pools         │       │
+│ │ Docs        │                       │ • Fragmentación │       │
+│ └─────────────┘                       └─────────────────┘       │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+```
 
 ### **Flujo de Petición:**
 1. **Routes** → Recibe petición HTTP

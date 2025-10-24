@@ -2,34 +2,35 @@
 
 ## Distribución Automática de Consultas
 
+```
 ┌─────────────────────────────────────────────────────────────────┐
-│ FRAGMENTACIÓN HORIZONTAL │
+│ FRAGMENTACIÓN HORIZONTAL                                        │
 ├─────────────────────────────────────────────────────────────────┤
-│ │
-│ CONSULTA: { id_cen_med: 1, ... } │
-│ │ │
-│ ▼ │
-│ ┌─────────────────┐ │
-│ │ BACKEND API │ │
-│ │ (Node.js) │ │
-│ │ │ │
-│ │ • getPoolForCenter() │
-│ │ • Lógica de Fragmentación │
-│ └─────────────────┘ │
-│ │ │
-│ ▼ │
-│ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ │
-│ │ CENTRO 1 │ │ CENTRO 2 │ │ CENTRO 3 │ │
-│ │ (Quito) │ │ (Guayaquil) │ │ (Cuenca) │ │
-│ │ │ │ │ │ │ │
-│ │ • Consultas │ │ • Consultas │ │ • Consultas │ │
-│ │ Quito │ │ Guayaquil │ │ Cuenca │ │
-│ │ • Escritura │ │ • Solo Lectura │ │ • Solo Lectura │ │
-│ │ • Datos Maestros│ │ • Réplica │ │ • Réplica │ │
-│ └─────────────────┘ └─────────────────┘ └─────────────────┘ │
-│ │
+│                                                                 │
+│                 CONSULTA: { id_cen_med: 1, ... }                │
+│                               │                                 │
+│                               ▼                                 │
+│                      ┌─────────────────┐                        │
+│                      │ BACKEND API     │                        │
+│                      │ (Node.js)       │                        │
+│                      │                 │                        │
+│                      │ • getPoolForCenter()                     │
+│                      │ • Lógica de Fragmentación                │
+│                      └─────────────────┘                        │
+│                               │                                 │
+│                               ▼                                 │
+│ ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐   │
+│ │ CENTRO 1        │  │ CENTRO 2        │  │ CENTRO 3        │   │
+│ │ (Quito)         │  │ (Guayaquil)     │  │ (Cuenca)        │   │
+│ │                 │  │                 │  │                 │   │
+│ │ • Consultas     │  │ • Consultas     │  │ • Consultas     │   │
+│ │ Quito           │  │ Guayaquil       │  │ Cuenca          │   │
+│ │ • Escritura     │  │ • Solo Lectura  │  │ • Solo Lectura  │   │
+│ │ • Datos Maestros│  │ • Réplica       │  │ • Réplica       │   │
+│ └─────────────────┘  └─────────────────┘  └─────────────────┘   │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
+```
 
 ### **Lógica de Fragmentación:**
 ```javascript
